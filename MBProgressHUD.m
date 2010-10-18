@@ -8,6 +8,9 @@
 
 @interface MBProgressHUD ()
 
+- (void)cleanUp;
+- (void)deviceOrientationDidChange:(NSNotification *)notification;
+- (void)launchExecution;
 - (void)hideUsingAnimation:(BOOL)animated;
 - (void)showUsingAnimation:(BOOL)animated;
 - (void)fillRoundedRect:(CGRect)rect inContext:(CGContextRef)context;
@@ -240,7 +243,7 @@
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+    if( (self = [super initWithFrame:frame]) ) {
         // Set default values for properties
         self.animationType = MBProgressHUDAnimationFade;
         self.mode = MBProgressHUDModeIndeterminate;
